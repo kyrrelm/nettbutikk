@@ -35,18 +35,17 @@ const pants: Article[] = [
 
 function App() {
   return (
-    <div>
+    <div style={styles.content}>
       <h1>HERE GOES PAGE</h1>
-      <ul style={styles.ul}>
+      <div style={styles.articles}>
         {pants.map(renderArticleView)}
-      </ul>
+      </div>
     </div>
   );
 }
 
 function renderArticleView(article: Article) {
   return (
-    <li>
       <div style={styles.renderArticleView}>
         <div style={styles.imgWrapper}>
           <img width="210" height="210" src={article.img} />
@@ -65,17 +64,30 @@ function renderArticleView(article: Article) {
           <span style={styles.price}>{article.price},-</span>
         </div>
       </div>
-    </li>
   );
 }
 
 const styles: { [name: string]: CSSProperties } = {
-  ul: {
-    listStyle: 'none'
+  content: {
+     display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    alignItems: 'center',
+    paddingLeft: '20px',
+    paddingRight: '20px',
+  },
+  articles: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    maxWidth: '900px'
   },
   renderArticleView: {
     boxShadow: '0 5px 6px rgba(68,67,66,0.1)',
-    marginBottom: '20px'
+    marginBottom: '20px',
+    marginLeft: '20px',
+    marginRight: '20px',
+    minWidth: '340px',
+    flex: 1,
   },
   imgWrapper: {
     position: 'relative',
