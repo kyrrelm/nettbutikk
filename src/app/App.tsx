@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import Header from './Header';
 
 interface Article {
   name: string;
@@ -36,7 +37,7 @@ const pants: Article[] = [
 function App() {
   return (
     <div style={styles.content}>
-      <h1>HERE GOES PAGE</h1>
+      <Header/>
       <div style={styles.articles}>
         {pants.map(renderArticleView)}
       </div>
