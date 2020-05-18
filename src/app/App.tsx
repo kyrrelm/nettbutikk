@@ -49,7 +49,7 @@ const styles: { [name: string]: CSSProperties } = {
     alignItems: "center",
     paddingLeft: "20px",
     paddingRight: "20px",
-    backgroundColor: "#fcfcfc"
+    backgroundColor: "#fff"
   },
   articles: {
     display: "flex",

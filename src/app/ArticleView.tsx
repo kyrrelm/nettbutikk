@@ -8,7 +8,7 @@ export interface Article {
 
 export default function ArticleView({ article }: { article: Article }) {
   return (
-    <div style={styles.renderArticleView}>
+    <div style={styles.articleView}>
       <div style={styles.imgWrapper}>
         <img width="210" height="210" src={article.img} />
       </div>
@@ -31,11 +31,12 @@ export default function ArticleView({ article }: { article: Article }) {
   );
 }
 const styles: { [name: string]: CSSProperties } = {
-  renderArticleView: {
-    boxShadow: "0 5px 6px rgba(68,67,66,0.1)",
+  articleView: {
+    boxShadow: "3px 3px 15px 2px rgba(68,67,66,0.1)",
     marginBottom: "20px",
     marginLeft: "20px",
     marginRight: "20px",
+    padding: '20px',
     minWidth: "340px",
     flex: 1,
     display: "flex",
