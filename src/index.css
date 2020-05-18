@@ -6,6 +6,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    font-size: 16px;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
@@ -14,3 +18,11 @@ code {
 .no-on-focus:focus {
     outline: none;
 }
+
+
+/*@media screen and (min-width: 900px) {*/
+/*    html {*/
+/*        font-size: 24px;*/
+/*    }*/
+/*}*/
+

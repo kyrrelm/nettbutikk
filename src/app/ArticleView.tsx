@@ -33,11 +33,11 @@ export default function ArticleView({ article }: { article: Article }) {
 const styles: { [name: string]: CSSProperties } = {
   articleView: {
     boxShadow: "3px 3px 15px 2px rgba(68,67,66,0.1)",
-    marginBottom: "20px",
-    marginLeft: "20px",
-    marginRight: "20px",
-    padding: '20px',
-    minWidth: "300px",
+    marginBottom: "1rem",
+    marginLeft: "1rem",
+    marginRight: "1rem",
+    padding: '1rem',
+    minWidth: "280px",
     flex: 1,
     display: "flex",
     flexDirection: "column",
@@ -45,15 +45,16 @@ const styles: { [name: string]: CSSProperties } = {
     backgroundColor: "#fff"
   },
   imgWrapper: {
-    marginBottom: "20px"
+    padding: '1rem',
+    marginBottom: "1rem"
   },
   productInfo: {
     borderTop: "1px solid #E2E2E2",
     position: "relative",
-    paddingTop: "20px",
-    paddingBottom: "20px",
-    marginLeft: "20px",
-    marginRight: "20px",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+    marginLeft: "1rem",
+    marginRight: "1rem",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -66,12 +67,13 @@ const styles: { [name: string]: CSSProperties } = {
     position: "absolute",
     left: 0,
     top: -10,
-    backgroundColor: "#FFF"
+    backgroundColor: "#FFF",
+    fontSize: "0.8rem"
   },
   ratingBoxWrapper: {
     position: "absolute",
     left: 0,
-    top: -12,
+    top: -10,
     right: 0,
     display: "flex",
     justifyContent: "center"
@@ -92,23 +94,24 @@ const styles: { [name: string]: CSSProperties } = {
     fontWeight: 500,
     position: "absolute",
     right: 0,
-    top: -15
+    top: -15,
+    fontSize: "0.8rem"
   },
   icon: {
     fontFamily: "Material Icons",
     fontWeight: "normal",
     fontStyle: "normal",
-    fontSize: "1.5rem",
+    fontSize: "1rem",
     color: "#fed227",
     display: "inline-block"
   },
   productName: {
     fontWeight: 200,
-    fontSize: "1.1rem"
+    fontSize: "1rem"
   },
   price: {
     color: "#757575",
     fontWeight: 200,
-    fontSize: "1.5rem"
+    fontSize: "1.3rem"
   }
 };

@@ -33,7 +33,7 @@ const styles: { [name: string]: CSSProperties } = {
   },
   searchBox: {
     display: 'flex',
-    height: '2.4rem',
+    height: '2rem',
     width: '100%',
     maxWidth: '300px',
   },

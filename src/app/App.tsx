@@ -47,8 +47,6 @@ const styles: { [name: string]: CSSProperties } = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    paddingLeft: "20px",
-    paddingRight: "20px",
     backgroundColor: "#fff"
   },
   articles: {
