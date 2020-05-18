@@ -34,7 +34,7 @@ const styles: { [name: string]: CSSProperties } = {
     display: 'flex',
     height: '2.4rem',
     width: '100%',
-    maxWidth: '400px',
+    maxWidth: '300px',
   },
   input: {
     borderLeft: '1px solid #ed8026',

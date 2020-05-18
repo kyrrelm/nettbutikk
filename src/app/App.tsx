@@ -74,7 +74,6 @@ const styles: { [name: string]: CSSProperties } = {
   content: {
      display: 'flex',
     flexDirection: 'column',
-    width: '100%',
     alignItems: 'center',
     paddingLeft: '20px',
     paddingRight: '20px',
