@@ -8,6 +8,7 @@ export default function Header() {
           <h1 style={styles.siteTitle}>Jubileumsport</h1>
         </div>
         {renderSearch()}
+        {renderDiscount()}
       </div>
   );
 }
@@ -20,6 +21,17 @@ function renderSearch() {
         <i style={styles.icon}>search</i>
       </button>
     </div>
+  );
+}
+
+function renderDiscount() {
+  return (
+      <div style={styles.discountBox}>
+        <input style={styles.inputDiscount} className={'no-on-focus'} placeholder={"Rabatkode"}/>
+        <button title="Søk" style={styles.buttonDiscount}>
+          Aktiver
+        </button>
+      </div>
   );
 }
 
@@ -36,6 +48,7 @@ const styles: { [name: string]: CSSProperties } = {
     height: '2rem',
     width: '100%',
     maxWidth: '300px',
+    marginBottom: '1rem',
   },
   input: {
     borderLeft: '1px solid #ed8026',
@@ -46,6 +59,35 @@ const styles: { [name: string]: CSSProperties } = {
     paddingLeft: '10px',
     paddingRight: '10px',
   },
+  discountBox: {
+    display: 'flex',
+    height: '2rem',
+    width: '100%',
+    maxWidth: '300px',
+    marginBottom: '1rem',
+    justifyContent: 'flex-end'
+  },
+  inputDiscount: {
+    borderLeft: 'none',
+    borderTop: 'none',
+    borderBottom: '1px solid #ed8026',
+    borderRight: 'none',
+    width: '40%',
+    paddingLeft: '0.5rem',
+    paddingRight: '0.5rem',
+    marginRight: '1rem'
+  },
+  buttonDiscount: {
+    borderRadius: "3px",
+    padding: "0.35rem 0.5rem",
+    color: "#FFF",
+    backgroundColor: "#ed8026",
+    boxShadow: "0 2px #B15E0A",
+    fontWeight: 500,
+    fontSize: "0.8rem",
+    borderStyle: 'none',
+  },
+
   titleContainer: {
     display: "flex",
     alignItems: "center"
