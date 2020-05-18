@@ -37,7 +37,7 @@ const styles: { [name: string]: CSSProperties } = {
     marginLeft: "20px",
     marginRight: "20px",
     padding: '20px',
-    minWidth: "340px",
+    minWidth: "300px",
     flex: 1,
     display: "flex",
     flexDirection: "column",
