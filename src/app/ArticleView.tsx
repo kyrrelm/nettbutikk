@@ -36,7 +36,7 @@ const styles: { [name: string]: CSSProperties } = {
     marginBottom: "1rem",
     marginLeft: "1rem",
     marginRight: "1rem",
-    padding: '1rem',
+    padding: '1rem 0.5rem 1rem 0.5rem',
     minWidth: "280px",
     flex: 1,
     display: "flex",
@@ -72,7 +72,7 @@ const styles: { [name: string]: CSSProperties } = {
   },
   ratingBoxWrapper: {
     position: "absolute",
-    left: 0,
+    left: -8,
     top: -10,
     right: 0,
     display: "flex",
