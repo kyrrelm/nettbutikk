@@ -32,11 +32,11 @@ const pants: Article[] = [
 function App() {
   const [hasDiscount, setHasDiscount] = useState<boolean>(false);
   const [showSamtykke, setShowSamtykke] = useState<boolean>(false);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowSamtykke(true);
-  //   }, 2000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowSamtykke(true);
+    }, 2000);
+  }, []);
   return (
     <div style={styles.content}>
       <Header hasDiscount={hasDiscount} setHasDiscount={setHasDiscount} />
@@ -75,7 +75,7 @@ function renderSamtykke(setShowSamtykke: Function) {
           }}
         >
           <button style={styles.button} onClick={() => {setShowSamtykke(false)}}>❤️</button>
-          <button style={styles.button}>💔</button>
+          <button style={styles.button} onClick={() => alert('Håper ikke du mener det 💔')}>💔</button>
         </div>
       </div>
     </div>
