@@ -35,6 +35,19 @@ export default function Header({
         setDiscountAndClear,
         checkDiscount
       )}
+      {hasDiscount && (
+        <p
+          style={{
+            color: "#444342",
+            marginTop: "2rem",
+            marginLeft: "2rem",
+            marginRight: "1rem"
+          }}
+        >
+          Rabattkoden gir deg 100% rabatt på et par valgfrie turbukser fra
+          valgfri produsent.
+        </p>
+      )}
     </div>
   );
 }
@@ -57,7 +70,13 @@ function renderDiscountCode(
   checkDiscount: Function
 ) {
   return (
-    <div style={{ position: "relative", alignSelf: "flex-end", marginRight: '1rem' }}>
+    <div
+      style={{
+        position: "relative",
+        alignSelf: "flex-end",
+        marginRight: "1rem"
+      }}
+    >
       <form
         onSubmit={event => {
           event.preventDefault();
@@ -102,7 +121,7 @@ const styles: { [name: string]: CSSProperties } = {
     flexDirection: "column",
     alignItems: "center",
     width: "100%",
-    marginBottom: "40px"
+    marginBottom: "1rem"
   },
   searchBox: {
     display: "flex",
@@ -111,7 +130,7 @@ const styles: { [name: string]: CSSProperties } = {
     maxWidth: "300px",
     marginBottom: "1rem",
     alignSelf: "flex-end",
-    marginRight: '1rem'
+    marginRight: "1rem"
   },
   input: {
     borderLeft: "1px solid #ed8026",
@@ -129,7 +148,7 @@ const styles: { [name: string]: CSSProperties } = {
     width: "100%",
     maxWidth: "300px",
     marginBottom: "1rem",
-    justifyContent: "flex-end",
+    justifyContent: "flex-end"
   },
   inputDiscount: {
     borderLeft: "none",

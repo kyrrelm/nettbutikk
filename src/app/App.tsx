@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from "react";
+import React, {CSSProperties, useEffect, useState} from "react";
 import Header from "./Header";
 import ArticleView, { Article } from "./ArticleView";
 
@@ -31,6 +31,12 @@ const pants: Article[] = [
 
 function App() {
   const [hasDiscount, setHasDiscount] = useState<boolean>(false);
+  const [showSamtykke, setShowSamtykke] = useState<boolean>(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowSamtykke(true);
+  //   }, 2000);
+  // }, []);
   return (
     <div style={styles.content}>
       <Header hasDiscount={hasDiscount} setHasDiscount={setHasDiscount} />
@@ -39,19 +45,19 @@ function App() {
           <ArticleView article={article} hasDiscount={hasDiscount} />
         ))}
       </div>
-      {renderSamtykke()}
+      {showSamtykke && renderSamtykke(setShowSamtykke)}
     </div>
   );
 }
 
-function renderSamtykke() {
+function renderSamtykke(setShowSamtykke: Function) {
   return (
     <div style={styles.samtykkeContainer}>
       <div style={styles.samtykke}>
         <h2
           style={{ marginBottom: "1rem", fontWeight: 500, fontSize: "1.4rem" }}
         >
-          Samtykke til kjærlighet
+          Samtykke om kjærlighet
         </h2>
         <div style={{ marginBottom: "2rem" }}>
           <p>
@@ -68,7 +74,7 @@ function renderSamtykke() {
             width: "100%"
           }}
         >
-          <button style={styles.button}>❤️</button>
+          <button style={styles.button} onClick={() => {setShowSamtykke(false)}}>❤️</button>
           <button style={styles.button}>💔</button>
         </div>
       </div>
