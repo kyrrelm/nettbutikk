@@ -1,18 +1,25 @@
 import React, { CSSProperties, useState } from "react";
 
 export default function Header({
+  hasDiscount,
   setHasDiscount
 }: {
+  hasDiscount: boolean;
   setHasDiscount: Function;
 }) {
   const [discountCode, setDiscountCode] = useState<string>("");
 
   function checkDiscount() {
-    if (discountCode.toLowerCase() === 'love of my life') {
+    if (discountCode.toLowerCase() === "love of my life") {
       setHasDiscount(true);
     } else {
       setHasDiscount(false);
     }
+  }
+
+  function setDiscountAndClear(value: string) {
+    setHasDiscount(false);
+    setDiscountCode(value);
   }
 
   return (
@@ -22,7 +29,12 @@ export default function Header({
         <h1 style={styles.siteTitle}>Jubileumsport</h1>
       </div>
       {renderSearch()}
-      {renderDiscountCode(discountCode, setDiscountCode, checkDiscount)}
+      {renderDiscountCode(
+        hasDiscount,
+        discountCode,
+        setDiscountAndClear,
+        checkDiscount
+      )}
     </div>
   );
 }
@@ -38,19 +50,48 @@ function renderSearch() {
   );
 }
 
-function renderDiscountCode(discountCode: string, setDiscountCode: Function, checkDiscount: Function) {
+function renderDiscountCode(
+  hasDiscount: boolean,
+  discountCode: string,
+  setDiscountAndClear: Function,
+  checkDiscount: Function
+) {
   return (
-    <div style={styles.discountBox}>
-      <input
-        style={styles.inputDiscount}
-        className={"no-on-focus"}
-        placeholder={"Rabatkode"}
-        value={discountCode}
-        onChange={event => setDiscountCode(event.target.value)}
-      />
-      <button title="Søk" style={styles.buttonDiscount} onClick={() => checkDiscount()}>
-        Aktiver
-      </button>
+    <div style={{ position: "relative" }}>
+      <form
+        onSubmit={event => {
+          event.preventDefault();
+          checkDiscount();
+        }}
+        style={styles.discountBox}
+      >
+        <input
+          style={styles.inputDiscount}
+          className={"no-on-focus"}
+          placeholder={"Rabatkode"}
+          value={discountCode}
+          onChange={event => setDiscountAndClear(event.target.value)}
+        />
+        <button
+          title="Søk"
+          style={styles.buttonDiscount}
+          onClick={() => checkDiscount()}
+        >
+          Aktiver
+        </button>
+      </form>
+      {hasDiscount && (
+        <span
+          style={{
+            position: "absolute",
+            right: "8.2rem",
+            bottom: "-0.6rem",
+            color: "#ed8026"
+          }}
+        >
+          Aktivert
+        </span>
+      )}
     </div>
   );
 }
@@ -77,7 +118,8 @@ const styles: { [name: string]: CSSProperties } = {
     borderRight: "none",
     width: "100%",
     paddingLeft: "10px",
-    paddingRight: "10px"
+    paddingRight: "10px",
+    fontSize: "1rem"
   },
   discountBox: {
     display: "flex",
@@ -95,7 +137,8 @@ const styles: { [name: string]: CSSProperties } = {
     width: "40%",
     paddingLeft: "0.5rem",
     paddingRight: "0.5rem",
-    marginRight: "1rem"
+    marginRight: "1rem",
+    fontSize: "1rem"
   },
   buttonDiscount: {
     borderRadius: "3px",

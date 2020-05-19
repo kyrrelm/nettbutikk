@@ -33,7 +33,7 @@ function App() {
   const [hasDiscount, setHasDiscount] = useState<boolean>(false);
   return (
     <div style={styles.content}>
-      <Header setHasDiscount={setHasDiscount}/>
+      <Header hasDiscount={hasDiscount} setHasDiscount={setHasDiscount}/>
       <div style={styles.articles}>
         {pants.map(article => (
           <ArticleView article={article} hasDiscount={hasDiscount} />
