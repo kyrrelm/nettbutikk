@@ -4,10 +4,28 @@ import ArticleView, { Article } from "./ArticleView";
 
 const pants: Article[] = [
   {
+    name: "Norrøna Bitihorn Lightweight Pants Women's Caviar",
+    price: 1499,
+    img:
+      "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/2/6/x2634187718.jpg.pagespeed.ic.xdbfPeBv5N.webp"
+  },
+  {
+    name: "Lundhags Makke Women's Pant Forest Green",
+    price: 2300,
+    img:
+        "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/1/1/1124003_604_front.jpg"
+  },
+  {
     name: "Norrøna Svalbard Heavy Duty Pants (W) Slate Grey",
     price: 1999,
     img:
-      "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/2/4/x2442198875.jpg.pagespeed.ic.krOBGqLruW.webp"
+        "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/2/4/x2442198875.jpg.pagespeed.ic.krOBGqLruW.webp"
+  },
+  {
+    name: "Houdini Women's Skiffer Pants Reed Beige",
+    price: 1999,
+    img:
+        "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/W/s/xWsSkifferPants_ReedBeige_F.jpg.pagespeed.ic.4x1xWxvxsg.webp"
   },
   {
     name: "Fjällräven Keb Gaiter Trousers Regular Women's Dark Garnet-Plum",
@@ -20,6 +38,12 @@ const pants: Article[] = [
     price: 1999,
     img:
       "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/1/8/x1864203897.jpg.pagespeed.ic.Nw7b0zhbXJ.webp"
+  },
+  {
+    name: "Lundhags Makke Women's Pant Black",
+    price: 1375,
+    img:
+      "https://dm9fd9qvy1kqy.cloudfront.net/media/catalog/product/cache/3/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/L/u/Lundhags-Makke-Ws-Pant-Black.jpg"
   },
   {
     name: "Norrøna Bitihorn Lightweight Pants (W) Drizzle/Elmwood",
