@@ -6,9 +6,10 @@ export interface Article {
   img: string;
 }
 
-export default function ArticleView({ article }: { article: Article }) {
+export default function ArticleView({ article, hasDiscount }: { article: Article, hasDiscount: boolean }) {
   return (
     <div style={styles.articleView}>
+      {hasDiscount && <div style={styles.discount}>-100%</div>}
       <div style={styles.imgWrapper}>
         <img width="210" height="210" src={article.img} />
       </div>
@@ -25,13 +26,15 @@ export default function ArticleView({ article }: { article: Article }) {
           </div>
         </div>
         <h2 style={styles.productName}>{article.name}</h2>
-        <span style={styles.price}>{article.price},-</span>
+        <span style={{...styles.price, textDecoration: hasDiscount ? 'line-through' : 'none'}}>{article.price},-</span>
+        {hasDiscount && <span style={{...styles.price, color: '#e11c3c', fontWeight: 400}}>0,-</span>}
       </div>
     </div>
   );
 }
 const styles: { [name: string]: CSSProperties } = {
   articleView: {
+    position: 'relative',
     boxShadow: "3px 3px 15px 2px rgba(68,67,66,0.1)",
     marginBottom: "1rem",
     marginLeft: "1rem",
@@ -113,5 +116,20 @@ const styles: { [name: string]: CSSProperties } = {
     color: "#757575",
     fontWeight: 200,
     fontSize: "1.3rem"
+  },
+  discount: {
+    position: 'absolute',
+    right: 20,
+    backgroundColor: '#ed8026',
+    borderRadius: '100%',
+    width: '3rem',
+    height: '3rem',
+    fontSize: '0.9rem',
+    fontWeight: 600,
+    pointerEvents: 'none',
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 };

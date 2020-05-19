@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, {CSSProperties, useState} from "react";
 import Header from "./Header";
 import ArticleView, { Article } from "./ArticleView";
 
@@ -30,12 +30,13 @@ const pants: Article[] = [
 ];
 
 function App() {
+  const [hasDiscount, setHasDiscount] = useState<boolean>(false);
   return (
     <div style={styles.content}>
-      <Header />
+      <Header setHasDiscount={setHasDiscount}/>
       <div style={styles.articles}>
         {pants.map(article => (
-          <ArticleView article={article} />
+          <ArticleView article={article} hasDiscount={hasDiscount} />
         ))}
       </div>
     </div>
