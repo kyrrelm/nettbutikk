@@ -1,4 +1,4 @@
-import React, {CSSProperties, useState} from "react";
+import React, { CSSProperties, useState } from "react";
 import Header from "./Header";
 import ArticleView, { Article } from "./ArticleView";
 
@@ -33,11 +33,30 @@ function App() {
   const [hasDiscount, setHasDiscount] = useState<boolean>(false);
   return (
     <div style={styles.content}>
-      <Header hasDiscount={hasDiscount} setHasDiscount={setHasDiscount}/>
+      <Header hasDiscount={hasDiscount} setHasDiscount={setHasDiscount} />
       <div style={styles.articles}>
         {pants.map(article => (
           <ArticleView article={article} hasDiscount={hasDiscount} />
         ))}
+      </div>
+      {renderSamtykke()}
+    </div>
+  );
+}
+
+function renderSamtykke() {
+  return (
+    <div style={styles.samtykkeContainer}>
+      <div style={styles.samtykke}>
+        <h2 style={{ marginBottom: "2rem" }}>Samtykke til kjærlighet</h2>
+        <div>
+          <p>
+            For å handle i denne nettbutikken må du samtykkke til at du elsker
+            Kyrre Laugerud Moe av hele ditt hjerte. Brudd på nettstedets
+            rettningslinjer vil ikke føre til rettslig forfølgelse, men vil
+            trolig såre innehaverens følelser
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -54,6 +73,26 @@ const styles: { [name: string]: CSSProperties } = {
     display: "flex",
     flexWrap: "wrap",
     maxWidth: "900px"
+  },
+  samtykkeContainer: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    background: "rgba(0,0,0,0.2)"
+  },
+  samtykke: {
+    position: "absolute",
+    top: "15%",
+    left: "5%",
+    right: "5%",
+    backgroundColor: "rgba(255,255,255)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "1.5rem"
   }
 };
 
