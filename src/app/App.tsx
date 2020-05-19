@@ -48,7 +48,11 @@ function renderSamtykke() {
   return (
     <div style={styles.samtykkeContainer}>
       <div style={styles.samtykke}>
-        <h2 style={{ marginBottom: "1rem", fontWeight: 500, fontSize: '1.4rem' }}>Samtykke til kjærlighet</h2>
+        <h2
+          style={{ marginBottom: "1rem", fontWeight: 500, fontSize: "1.4rem" }}
+        >
+          Samtykke til kjærlighet
+        </h2>
         <div style={{ marginBottom: "2rem" }}>
           <p>
             For å handle i denne nettbutikken må du samtykkke til at du elsker
@@ -57,7 +61,13 @@ function renderSamtykke() {
             trolig såre innehaverens følelser.
           </p>
         </div>
-        <div style={{ marginBottom: "2rem", display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%"
+          }}
+        >
           <button style={styles.button}>❤️</button>
           <button style={styles.button}>💔</button>
         </div>
@@ -97,7 +107,8 @@ const styles: { [name: string]: CSSProperties } = {
     alignItems: "center",
     justifyContent: "center",
     padding: "2.5rem",
-    color: "#444342"
+    color: "#444342",
+    boxShadow: "3px 3px 15px 6px rgba(68,67,66,0.1)"
   },
   button: {
     borderRadius: "3px",
@@ -108,7 +119,7 @@ const styles: { [name: string]: CSSProperties } = {
     borderStyle: "none",
     fontSize: "3rem",
     backgroundColor: "#444342",
-    minWidth: '6rem'
+    minWidth: "6rem"
   }
 };
 
